@@ -18,7 +18,8 @@
   mobile.addEventListener('change', finishEntry);
   reducedMotion.addEventListener('change', finishEntry);
   window.addEventListener('pagehide', finishEntry, {once: true});
-  setTimeout(finishEntry, 1000);
+  // A sequencia termina em 1s; a margem permite concluir o ultimo frame.
+  setTimeout(finishEntry, 1100);
 })();
 
 // Altere o telefone e os produtos demonstrativos aqui.
