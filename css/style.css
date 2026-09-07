@@ -30,8 +30,15 @@
   .mobile-entry .hero-actions{animation-delay:.5s}
   .mobile-entry .hero-rating{animation-delay:.5s}
   @keyframes mobile-entry-brand{from{opacity:0;transform:scale(.97)}to{opacity:1;transform:scale(1)}}
-  @keyframes mobile-entry-hero{from{opacity:0;transform:translateY(10px) scale(.985)}to{opacity:1;transform:translateY(0) scale(1)}}
-  @keyframes mobile-entry-up{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes mobile-entry-hero{from{opacity:0;transform:translateY(8px) scale(.985)}to{opacity:1;transform:translateY(0) scale(1)}}
+  @keyframes mobile-entry-up{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+  /* Movimento ambiente nos filhos: nunca substitui a entrada do H1. */
+  .hero-title-line{display:inline-block}
+  .mobile-hero-ambient .hero-title-line-first{animation:hero-title-breathe 6s ease-in-out infinite}
+  .mobile-hero-ambient .hero-title-line-second{animation:hero-title-breathe 7s ease-in-out .3s infinite}
+  .mobile-hero-ambient .hero-title-line-second em{animation:hero-title-accent 5.5s ease-in-out .6s infinite}
+  @keyframes hero-title-breathe{0%,100%{transform:translateY(0)}50%{transform:translateY(-2px)}}
+  @keyframes hero-title-accent{0%,100%{transform:translateY(0)}50%{transform:translateY(-1px)}}
 }
 /* Tablet */
 @media(max-width:1150px){.container{width:calc(100% - 72px)}#navigation{gap:21px}.brand img{width:150px;height:85px}.hero h1{font-size:76px}.hero-inner{min-height:640px;grid-template-columns:56% 44%;padding-top:65px}.hero-art{right:-25px;width:62%;height:590px;top:8px}.hero-type{font-size:260px;top:5px}.hero-stamp{right:38px;bottom:50px}.hero-side{right:8px}.hero-copy .eyebrow{font-size:9px}.hero-actions .button{padding-inline:18px}.highlights-grid>div{gap:14px;padding-left:20px}.highlights strong{font-size:10px}.highlights b{font-size:41px}.filters{gap:25px}.product-content{padding:18px}.product-content h3{font-size:30px}.product-bottom{gap:8px}.product-order{font-size:8px;padding:11px 8px;gap:6px}.price{font-size:27px}.featured-copy{padding:36px 25px 36px 20px}.featured-photo{min-height:435px}.about-grid{gap:48px;grid-template-columns:49% 1fr}.about h2{font-size:56px}.about-visual{height:460px}.reviews-grid{gap:40px}.reviews-copy{padding-left:35px}.score-line{gap:15px}.score-line>strong{font-size:160px}.score-line .rating-stars{font-size:18px}.order-section h2{font-size:75px}.location-grid{gap:45px}.footer-statement p{font-size:48px}.footer-columns{gap:22px}.footer-bottom{gap:25px}}

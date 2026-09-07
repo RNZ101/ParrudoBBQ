@@ -8,8 +8,13 @@
 
   const root = document.documentElement;
   root.classList.add('mobile-entry');
-  function finishEntry() {
+  function finishEntry(completed = false) {
+    clearTimeout(entryTimer);
     root.classList.remove('mobile-entry');
+    // Os spans flutuam apenas depois da entrada; o H1 continua independente.
+    if (completed === true && mobile.matches && !reducedMotion.matches) {
+      root.classList.add('mobile-hero-ambient');
+    }
     mobile.removeEventListener('change', finishEntry);
     reducedMotion.removeEventListener('change', finishEntry);
     window.removeEventListener('pagehide', finishEntry);
@@ -19,7 +24,7 @@
   reducedMotion.addEventListener('change', finishEntry);
   window.addEventListener('pagehide', finishEntry, {once: true});
   // A sequencia termina em 1s; a margem permite concluir o ultimo frame.
-  setTimeout(finishEntry, 1100);
+  const entryTimer = setTimeout(() => finishEntry(true), 1100);
 })();
 
 // Altere o telefone e os produtos demonstrativos aqui.
