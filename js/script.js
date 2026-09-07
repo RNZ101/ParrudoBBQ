@@ -1,5 +1,26 @@
 'use strict';
 
+// Entrada unica por carregamento, no mesmo breakpoint do layout de celular.
+(() => {
+  const mobile = matchMedia('(max-width: 600px)');
+  const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+  if (!mobile.matches || reducedMotion.matches) return;
+
+  const root = document.documentElement;
+  root.classList.add('mobile-entry');
+  function finishEntry() {
+    root.classList.remove('mobile-entry');
+    mobile.removeEventListener('change', finishEntry);
+    reducedMotion.removeEventListener('change', finishEntry);
+    window.removeEventListener('pagehide', finishEntry);
+  }
+  // Remover a classe evita repeticao ao redimensionar ou voltar pelo historico.
+  mobile.addEventListener('change', finishEntry);
+  reducedMotion.addEventListener('change', finishEntry);
+  window.addEventListener('pagehide', finishEntry, {once: true});
+  setTimeout(finishEntry, 1000);
+})();
+
 // Altere o telefone e os produtos demonstrativos aqui.
 const PHONE = '5522997343358';
 const DEFAULT_MESSAGE = 'Olá! Vim pelo site da PARRUDOBBQ BURGER e gostaria de fazer um pedido.';
