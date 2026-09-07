@@ -1,0 +1,40 @@
+{
+  "viewports": [
+    {
+      "width": 375,
+      "overflow": false,
+      "filters": "passed",
+      "links": "passed",
+      "mobile_menu": "passed"
+    },
+    {
+      "width": 430,
+      "overflow": false,
+      "filters": "passed",
+      "links": "passed",
+      "mobile_menu": "passed"
+    },
+    {
+      "width": 768,
+      "overflow": false,
+      "filters": "passed",
+      "links": "passed",
+      "mobile_menu": "passed"
+    },
+    {
+      "width": 1024,
+      "overflow": false,
+      "filters": "passed",
+      "links": "passed",
+      "mobile_menu": "n/a"
+    },
+    {
+      "width": 1440,
+      "overflow": false,
+      "filters": "passed",
+      "links": "passed",
+      "mobile_menu": "n/a"
+    }
+  ],
+  "console_errors": []
+}
